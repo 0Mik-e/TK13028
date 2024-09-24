@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-    const int b = 15;
-    const int k = 6;
+    int b = 15;
+    int k = 6;
     char kursi [b][k];
     int terisi, baris;
     string kolom;
@@ -48,7 +48,22 @@ int main() {
     cout<<"Pilih kolom kursi yang diinginkan (A-F) :"<<endl;
     cin>>kolom;
 
-    int col = kolom[0] - 'A';
+    if (kolom == "A") {
+        k = 0;
+    } if (kolom == "B") {
+        k = 1;
+    } if (kolom == "C") {
+        k = 2;
+    } if (kolom == "D") {
+        k = 3;
+    } if (kolom == "E") {
+        k = 4;
+    } if (kolom == "F") {
+        k = 5;
+    } else {
+        cout<<"Huruf untuk kolom bangku yang diketik tidak tersedia.";
+        return 0;
+    }
     
     if ((kelas == "ekonomi" && baris < 5) || (kelas == "bisnis" && (baris < 2 || baris > 4)) || (kelas == "utama" && baris > 1)) {
         cout << "Baris kursi yang Anda pilih tidak sesuai dengan kelas Anda." << endl;
